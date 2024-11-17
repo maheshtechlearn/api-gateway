@@ -5,15 +5,29 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8081/eureka
+  instance:
+    prefer-ip-address: true
 spring:
   cloud:
     gateway:
       routes:
         - id: visitors-route
-          uri: lb://visitor-management
+          uri: lb://visitor-service
           predicates:
             - Path=/visitors/**
           filters:
             - StripPrefix=0
+        - id: appointments-route
+          uri: lb://appointment-service
+          predicates:
+            - Path=/appointments/**
+          filters:
+            - StripPrefix=1
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/notifications/**
+          filters:
+            - StripPrefix=1
   application:
     name: api-gateway

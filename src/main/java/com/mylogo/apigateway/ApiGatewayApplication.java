@@ -1,4 +1,4 @@
-package com.mylogo.api_gateway;
+package com.mylogo.apigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
