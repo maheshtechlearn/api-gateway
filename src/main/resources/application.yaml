@@ -6,7 +6,9 @@ eureka:
     service-url:
       defaultZone: http://localhost:8081/eureka
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: false
+    hostname: localhost
+
 spring:
   cloud:
     gateway:
@@ -20,9 +22,9 @@ spring:
         - id: appointments-route
           uri: lb://appointment-service
           predicates:
-            - Path=/appointments/**
+            - Path=/api/appointments/**
           filters:
-            - StripPrefix=1
+            - StripPrefix=0
         - id: notification-service
           uri: lb://notification-service
           predicates:
@@ -31,3 +33,14 @@ spring:
             - StripPrefix=1
   application:
     name: api-gateway
+springdoc:
+  swagger-ui:
+    urls:
+      - name: "Visitor Service"
+        url: http://localhost:2345/v3/api-docs
+      - name: "Appointment Service"
+        url: http://localhost:2346/v3/api-docs
+
+
+
+
