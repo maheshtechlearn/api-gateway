@@ -18,6 +18,7 @@ spec:
       containers:
         - name: api-gateway
           image: mahesh541/api-gateway:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8085
 
@@ -32,7 +33,6 @@ spec:
     app: api-gateway
   ports:
     - protocol: TCP
-      port: 8085
+      port: 80
       targetPort: 8085
-      nodePort: 30002
   type: LoadBalancer  # Can also be NodePort or ClusterIP
