@@ -3,9 +3,10 @@ server:
 
 eureka:
   client:
-    fetch-registry: true
     service-url:
-      defaultZone: http://eureka-server:8081/eureka
+      defaultZone: http://35.226.198.92:8081/eureka
+  instance:
+    prefer-ip-address: true
 
 
 
