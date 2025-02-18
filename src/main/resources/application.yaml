@@ -2,11 +2,14 @@ server:
   port: 8085
 
 eureka:
-  client:
-    service-url:
-      defaultZone: http://35.226.198.92:8081/
   instance:
-    prefer-ip-address: true
+    preferIpAddress: true
+    hostname: api-service-registry-deployment-0
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://api-service-registry-deployment-0.api-service-registry.default.svc.cluster.local:8761/eureka
 
 
 
