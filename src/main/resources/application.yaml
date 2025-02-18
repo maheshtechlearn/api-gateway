@@ -4,12 +4,11 @@ server:
 eureka:
   instance:
     preferIpAddress: true
-    hostname: eureka-0
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eureka-0.eureka.default.svc.cluster.local:8081/eureka
+      defaultZone: http://34.58.111.152:8081/eureka
 
 
 
