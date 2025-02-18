@@ -3,11 +3,12 @@ server:
 
 eureka:
   client:
-    service-url:
-      defaultZone: http://service-registry.default.svc.cluster.local:8081/eureka
-
     fetch-registry: true
-    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-server:8081/eureka
+
+
+
 
 
 
