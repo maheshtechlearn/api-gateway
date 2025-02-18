@@ -3,11 +3,14 @@ server:
 
 eureka:
   client:
+    fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8081/eureka
-  instance:
-    prefer-ip-address: false
-    hostname: localhost
+      defaultZone: http://eureka-server:8081/eureka
+
+
+
+
+
 
 spring:
   cloud:
@@ -37,11 +40,12 @@ springdoc:
   swagger-ui:
     urls:
       - name: "Visitor Service"
-        url: http://localhost:2345/v3/api-docs
+        url: http://visitor-service.default.svc.cluster.local:8080/v3/api-docs
       - name: "Appointment Service"
-        url: http://localhost:2346/v3/api-docs
+        url: http://appointment-service.default.svc.cluster.local:8080/v3/api-docs
       - name: "Notification Service"
-        url: http://localhost:2347/v3/api-docs
+        url: http://notification-service.default.svc.cluster.local:8080/v3/api-docs
+
 
 
 
