@@ -35,4 +35,4 @@ spec:
       port: 8085
       targetPort: 8085
       nodePort: 30002
-  type: NodePort  # Can also be NodePort or ClusterIP
+  type: LoadBalancer  # Can also be NodePort or ClusterIP
