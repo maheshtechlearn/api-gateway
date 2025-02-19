@@ -8,7 +8,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eureka.dev.svc.cluster.local:8081/eureka/
+      defaultZone: http://eureka.dev.svc.cluster.local:8761/eureka/
 
 
 
